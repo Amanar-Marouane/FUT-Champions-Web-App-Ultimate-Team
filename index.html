@@ -17,7 +17,7 @@
                 <img src="./media/logo.png" alt="Web Site's Logo">
             </div>
             <div class="header-nav-signUp">
-                <button onclick="clickEffect()">Sign Up</button>
+                <button class="button" onclick="clickEffect()">Sign Up</button>
             </div>
         </nav>
     </header>
@@ -27,7 +27,7 @@
                 <img src="./media/stadium_background.webp" alt="Stadium Background">
                 <div class="main-container-stadium-players F-T-T">
                     <div class="att">
-                        <div class="card shadow LW">
+                        <div class="card stadiumCard shadow LW">
                             <div class="CPostion">
                                 <p>LW</p>
                             </div>
@@ -56,7 +56,7 @@
                             </div>
                             <img class="backgroung" src="./media/emptyBadge.png" alt="">
                         </div>
-                        <div class="card shadow ST">
+                        <div class="card stadiumCard shadow ST">
                             <div class="CPostion">
                                 <p>ST</p>
                             </div>
@@ -85,7 +85,7 @@
                             </div>
                             <img class="backgroung" src="./media/emptyBadge.png" alt="">
                         </div>
-                        <div class="card shadow RW">
+                        <div class="card stadiumCard shadow RW">
                             <div class="CPostion">
                                 <p>RW</p>
                             </div>
@@ -116,7 +116,36 @@
                         </div>
                     </div>
                     <div class="mid">
-                        <div class="card shadow CM">
+                        <div class="card stadiumCard shadow LM">
+                            <div class="CPostion">
+                                <p>LM</p>
+                            </div>
+                            <div class="add">
+                                <svg width="40px" height="40px" viewBox="0 0 32 32" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+
+                                    <title>plus-square</title>
+                                    <desc>Created with Sketch Beta.</desc>
+                                    <defs>
+
+                                    </defs>
+                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                                        sketch:type="MSPage">
+                                        <g id="Icon-Set" sketch:type="MSLayerGroup"
+                                            transform="translate(-100.000000, -1035.000000)" fill="#000000">
+                                            <path
+                                                d="M130,1063 C130,1064.1 129.104,1065 128,1065 L104,1065 C102.896,1065 102,1064.1 102,1063 L102,1039 C102,1037.9 102.896,1037 104,1037 L128,1037 C129.104,1037 130,1037.9 130,1039 L130,1063 L130,1063 Z M128,1035 L104,1035 C101.791,1035 100,1036.79 100,1039 L100,1063 C100,1065.21 101.791,1067 104,1067 L128,1067 C130.209,1067 132,1065.21 132,1063 L132,1039 C132,1036.79 130.209,1035 128,1035 L128,1035 Z M122,1050 L117,1050 L117,1045 C117,1044.45 116.552,1044 116,1044 C115.448,1044 115,1044.45 115,1045 L115,1050 L110,1050 C109.448,1050 109,1050.45 109,1051 C109,1051.55 109.448,1052 110,1052 L115,1052 L115,1057 C115,1057.55 115.448,1058 116,1058 C116.552,1058 117,1057.55 117,1057 L117,1052 L122,1052 C122.552,1052 123,1051.55 123,1051 C123,1050.45 122.552,1050 122,1050 L122,1050 Z"
+                                                id="plus-square" sketch:type="MSShapeGroup">
+
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <img class="backgroung" src="./media/emptyBadge.png" alt="">
+                        </div>
+                        <div class="card stadiumCard shadow CM">
                             <div class="CPostion">
                                 <p>CM</p>
                             </div>
@@ -145,38 +174,9 @@
                             </div>
                             <img class="backgroung" src="./media/emptyBadge.png" alt="">
                         </div>
-                        <div class="card shadow CM">
+                        <div class="card stadiumCard shadow RM">
                             <div class="CPostion">
-                                <p>CM</p>
-                            </div>
-                            <div class="add">
-                                <svg width="40px" height="40px" viewBox="0 0 32 32" version="1.1"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-
-                                    <title>plus-square</title>
-                                    <desc>Created with Sketch Beta.</desc>
-                                    <defs>
-
-                                    </defs>
-                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
-                                        sketch:type="MSPage">
-                                        <g id="Icon-Set" sketch:type="MSLayerGroup"
-                                            transform="translate(-100.000000, -1035.000000)" fill="#000000">
-                                            <path
-                                                d="M130,1063 C130,1064.1 129.104,1065 128,1065 L104,1065 C102.896,1065 102,1064.1 102,1063 L102,1039 C102,1037.9 102.896,1037 104,1037 L128,1037 C129.104,1037 130,1037.9 130,1039 L130,1063 L130,1063 Z M128,1035 L104,1035 C101.791,1035 100,1036.79 100,1039 L100,1063 C100,1065.21 101.791,1067 104,1067 L128,1067 C130.209,1067 132,1065.21 132,1063 L132,1039 C132,1036.79 130.209,1035 128,1035 L128,1035 Z M122,1050 L117,1050 L117,1045 C117,1044.45 116.552,1044 116,1044 C115.448,1044 115,1044.45 115,1045 L115,1050 L110,1050 C109.448,1050 109,1050.45 109,1051 C109,1051.55 109.448,1052 110,1052 L115,1052 L115,1057 C115,1057.55 115.448,1058 116,1058 C116.552,1058 117,1057.55 117,1057 L117,1052 L122,1052 C122.552,1052 123,1051.55 123,1051 C123,1050.45 122.552,1050 122,1050 L122,1050 Z"
-                                                id="plus-square" sketch:type="MSShapeGroup">
-
-                                            </path>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </div>
-                            <img class="backgroung" src="./media/emptyBadge.png" alt="">
-                        </div>
-                        <div class="card shadow CM">
-                            <div class="CPostion">
-                                <p>CM</p>
+                                <p>RM</p>
                             </div>
                             <div class="add">
                                 <svg width="40px" height="40px" viewBox="0 0 32 32" version="1.1"
@@ -205,7 +205,7 @@
                         </div>
                     </div>
                     <div class="def">
-                        <div class="card shadow LB">
+                        <div class="card stadiumCard shadow LB">
                             <div class="CPostion">
                                 <p>LB</p>
                             </div>
@@ -234,7 +234,7 @@
                             </div>
                             <img class="backgroung" src="./media/emptyBadge.png" alt="">
                         </div>
-                        <div class="card shadow CB">
+                        <div class="card stadiumCard shadow CB">
                             <div class="CPostion">
                                 <p>CB</p>
                             </div>
@@ -263,7 +263,7 @@
                             </div>
                             <img class="backgroung" src="./media/emptyBadge.png" alt="">
                         </div>
-                        <div class="card shadow CB">
+                        <div class="card stadiumCard shadow CB">
                             <div class="CPostion">
                                 <p>CB</p>
                             </div>
@@ -292,7 +292,7 @@
                             </div>
                             <img class="backgroung" src="./media/emptyBadge.png" alt="">
                         </div>
-                        <div class="card shadow RB">
+                        <div class="card stadiumCard shadow RB">
                             <div class="CPostion">
                                 <p>RB</p>
                             </div>
@@ -323,7 +323,7 @@
                         </div>
                     </div>
                     <div class="kep">
-                        <div class="card shadow GK">
+                        <div class="card stadiumCard shadow GK">
                             <div class="CPostion">
                                 <p>GK</p>
                             </div>
@@ -356,226 +356,17 @@
                 </div>
             </div>
             <div class="main-container-menu">
-                <div class="playersDisplay">
-                    <div class="card GK">
-                        <img class="backgroung" src="./media/emptyBadge.png" alt="">
-                        <div class="info">
-                            <h3 class="rating">94</h3>
-                            <h3 class="position">CM</h3>
-                        </div>
-                        <div class="photo">
-                            <img src="https://cdn.sofifa.net/players/230/621/25_120.png" alt="">
-                        </div>
-                        <div class="name">Zidane</div>
-                        <div class="statistics">
-                            <div class="PAC"><span>PAC</span><br><span>99</span></div>
-                            <div class="SHO"><span>SHO</span><br><span>99</span></div>
-                            <div class="PAS"><span>PAS</span><br><span>99</span></div>
-                            <div class="DRI"><span>DRI</span><br><span>99</span></div>
-                            <div class="DEF"><span>DEF</span><br><span>99</span></div>
-                            <div class="PHY"><span>PHY</span><br><span>99</span></div>
-                        </div>
-                        <div class="info1">
-                            <div class="flag">
-                                <img src="https://cdn.sofifa.net/flags/it.png" alt="">
-                            </div>
-                            <div class="club">
-                                <img src="https://cdn.sofifa.net/meta/team/591/120.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card GK">
-                        <img class="backgroung" src="./media/emptyBadge.png" alt="">
-                        <div class="info">
-                            <h3 class="rating">94</h3>
-                            <h3 class="position">CM</h3>
-                        </div>
-                        <div class="photo">
-                            <img src="https://cdn.sofifa.net/players/230/621/25_120.png" alt="">
-                        </div>
-                        <div class="name">Zidane</div>
-                        <div class="statistics">
-                            <div class="PAC"><span>PAC</span><br><span>99</span></div>
-                            <div class="SHO"><span>SHO</span><br><span>99</span></div>
-                            <div class="PAS"><span>PAS</span><br><span>99</span></div>
-                            <div class="DRI"><span>DRI</span><br><span>99</span></div>
-                            <div class="DEF"><span>DEF</span><br><span>99</span></div>
-                            <div class="PHY"><span>PHY</span><br><span>99</span></div>
-                        </div>
-                        <div class="info1">
-                            <div class="flag">
-                                <img src="https://cdn.sofifa.net/flags/it.png" alt="">
-                            </div>
-                            <div class="club">
-                                <img src="https://cdn.sofifa.net/meta/team/591/120.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card GK">
-                        <img class="backgroung" src="./media/emptyBadge.png" alt="">
-                        <div class="info">
-                            <h3 class="rating">94</h3>
-                            <h3 class="position">CM</h3>
-                        </div>
-                        <div class="photo">
-                            <img src="https://cdn.sofifa.net/players/230/621/25_120.png" alt="">
-                        </div>
-                        <div class="name">Zidane</div>
-                        <div class="statistics">
-                            <div class="PAC"><span>PAC</span><br><span>99</span></div>
-                            <div class="SHO"><span>SHO</span><br><span>99</span></div>
-                            <div class="PAS"><span>PAS</span><br><span>99</span></div>
-                            <div class="DRI"><span>DRI</span><br><span>99</span></div>
-                            <div class="DEF"><span>DEF</span><br><span>99</span></div>
-                            <div class="PHY"><span>PHY</span><br><span>99</span></div>
-                        </div>
-                        <div class="info1">
-                            <div class="flag">
-                                <img src="https://cdn.sofifa.net/flags/it.png" alt="">
-                            </div>
-                            <div class="club">
-                                <img src="https://cdn.sofifa.net/meta/team/591/120.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card GK">
-                        <img class="backgroung" src="./media/emptyBadge.png" alt="">
-                        <div class="info">
-                            <h3 class="rating">94</h3>
-                            <h3 class="position">CM</h3>
-                        </div>
-                        <div class="photo">
-                            <img src="https://cdn.sofifa.net/players/230/621/25_120.png" alt="">
-                        </div>
-                        <div class="name">Zidane</div>
-                        <div class="statistics">
-                            <div class="PAC"><span>PAC</span><br><span>99</span></div>
-                            <div class="SHO"><span>SHO</span><br><span>99</span></div>
-                            <div class="PAS"><span>PAS</span><br><span>99</span></div>
-                            <div class="DRI"><span>DRI</span><br><span>99</span></div>
-                            <div class="DEF"><span>DEF</span><br><span>99</span></div>
-                            <div class="PHY"><span>PHY</span><br><span>99</span></div>
-                        </div>
-                        <div class="info1">
-                            <div class="flag">
-                                <img src="https://cdn.sofifa.net/flags/it.png" alt="">
-                            </div>
-                            <div class="club">
-                                <img src="https://cdn.sofifa.net/meta/team/591/120.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card GK">
-                        <img class="backgroung" src="./media/emptyBadge.png" alt="">
-                        <div class="info">
-                            <h3 class="rating">94</h3>
-                            <h3 class="position">CM</h3>
-                        </div>
-                        <div class="photo">
-                            <img src="https://cdn.sofifa.net/players/230/621/25_120.png" alt="">
-                        </div>
-                        <div class="name">Zidane</div>
-                        <div class="statistics">
-                            <div class="PAC"><span>PAC</span><br><span>99</span></div>
-                            <div class="SHO"><span>SHO</span><br><span>99</span></div>
-                            <div class="PAS"><span>PAS</span><br><span>99</span></div>
-                            <div class="DRI"><span>DRI</span><br><span>99</span></div>
-                            <div class="DEF"><span>DEF</span><br><span>99</span></div>
-                            <div class="PHY"><span>PHY</span><br><span>99</span></div>
-                        </div>
-                        <div class="info1">
-                            <div class="flag">
-                                <img src="https://cdn.sofifa.net/flags/it.png" alt="">
-                            </div>
-                            <div class="club">
-                                <img src="https://cdn.sofifa.net/meta/team/591/120.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card GK">
-                        <img class="backgroung" src="./media/emptyBadge.png" alt="">
-                        <div class="info">
-                            <h3 class="rating">94</h3>
-                            <h3 class="position">CM</h3>
-                        </div>
-                        <div class="photo">
-                            <img src="https://cdn.sofifa.net/players/230/621/25_120.png" alt="">
-                        </div>
-                        <div class="name">Zidane</div>
-                        <div class="statistics">
-                            <div class="PAC"><span>PAC</span><br><span>99</span></div>
-                            <div class="SHO"><span>SHO</span><br><span>99</span></div>
-                            <div class="PAS"><span>PAS</span><br><span>99</span></div>
-                            <div class="DRI"><span>DRI</span><br><span>99</span></div>
-                            <div class="DEF"><span>DEF</span><br><span>99</span></div>
-                            <div class="PHY"><span>PHY</span><br><span>99</span></div>
-                        </div>
-                        <div class="info1">
-                            <div class="flag">
-                                <img src="https://cdn.sofifa.net/flags/it.png" alt="">
-                            </div>
-                            <div class="club">
-                                <img src="https://cdn.sofifa.net/meta/team/591/120.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card GK">
-                        <img class="backgroung" src="./media/emptyBadge.png" alt="">
-                        <div class="info">
-                            <h3 class="rating">94</h3>
-                            <h3 class="position">CM</h3>
-                        </div>
-                        <div class="photo">
-                            <img src="https://cdn.sofifa.net/players/230/621/25_120.png" alt="">
-                        </div>
-                        <div class="name">Zidane</div>
-                        <div class="statistics">
-                            <div class="PAC"><span>PAC</span><br><span>99</span></div>
-                            <div class="SHO"><span>SHO</span><br><span>99</span></div>
-                            <div class="PAS"><span>PAS</span><br><span>99</span></div>
-                            <div class="DRI"><span>DRI</span><br><span>99</span></div>
-                            <div class="DEF"><span>DEF</span><br><span>99</span></div>
-                            <div class="PHY"><span>PHY</span><br><span>99</span></div>
-                        </div>
-                        <div class="info1">
-                            <div class="flag">
-                                <img src="https://cdn.sofifa.net/flags/it.png" alt="">
-                            </div>
-                            <div class="club">
-                                <img src="https://cdn.sofifa.net/meta/team/591/120.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card GK">
-                        <img class="backgroung" src="./media/emptyBadge.png" alt="">
-                        <div class="info">
-                            <h3 class="rating">94</h3>
-                            <h3 class="position">CM</h3>
-                        </div>
-                        <div class="photo">
-                            <img src="https://cdn.sofifa.net/players/230/621/25_120.png" alt="">
-                        </div>
-                        <div class="name">Zidane</div>
-                        <div class="statistics">
-                            <div class="PAC"><span>PAC</span><br><span>99</span></div>
-                            <div class="SHO"><span>SHO</span><br><span>99</span></div>
-                            <div class="PAS"><span>PAS</span><br><span>99</span></div>
-                            <div class="DRI"><span>DRI</span><br><span>99</span></div>
-                            <div class="DEF"><span>DEF</span><br><span>99</span></div>
-                            <div class="PHY"><span>PHY</span><br><span>99</span></div>
-                        </div>
-                        <div class="info1">
-                            <div class="flag">
-                                <img src="https://cdn.sofifa.net/flags/it.png" alt="">
-                            </div>
-                            <div class="club">
-                                <img src="https://cdn.sofifa.net/meta/team/591/120.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="playersDisplay"></div>
                 <div class="menu">
-                    
+                    <div class="select">
+                        <h3>Your Team's Formule</h3>
+                        <select name="TeamStrategie" id="TeamStrategie">
+                            <option value="4-3-3">4-3-3</option>
+                            <option value="4-4-2">4-4-2</option>
+                        </select>
+                    </div>
+                    <button class="button allPlayers" onclick="clickEffect()">Show All The Players</button>
+                    <button class="button addPlayer" onclick="clickEffect()">Add New Player</button>
                 </div>
             </div>
         </div>
@@ -586,7 +377,7 @@
 </html>
 
 <!-- 
-<div class="card GK">
+<div class="card stadiumCard GK">
     <img class="backgroung" src="./media/emptyBadge.png" alt="">
     <div class="info">
         <h3 class="rating">94</h3>

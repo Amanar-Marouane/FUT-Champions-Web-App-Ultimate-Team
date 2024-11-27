@@ -14,6 +14,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    user-select: none;
 }
 
 body {
@@ -45,7 +46,8 @@ body {
     height: fit-content;
 }
 
-.header-nav-signUp button {
+.button {
+    cursor: pointer;
     padding: .5em 1em;
     background-color: var(--green);
     color: var(--white);
@@ -53,7 +55,7 @@ body {
     border-radius: 5px;
 }
 
-.header-nav-signUp button:hover {
+.button:hover {
     box-shadow: 2px 2px 4px black;
 }
 
@@ -76,6 +78,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    overflow: visible;
 }
 
 .main-container-stadium img {
@@ -109,7 +112,7 @@ body {
 }
 
 .card {
-    width: 150px;
+    width: 120px;
     height: 160px;
     position: relative;
     cursor: pointer;
@@ -125,7 +128,7 @@ body {
 .photo {
     position: absolute;
     top: 15px;
-    right: 25px;
+    right: 15px;
 }
 
 .photo img {
@@ -136,7 +139,7 @@ body {
 .info {
     position: absolute;
     top: 25px;
-    left: 35px;
+    left: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,6 +161,7 @@ body {
     width: 100%;
     text-align: center;
     color: var(--white);
+    font-size: 0.7em;
     font-weight: 600;
 }
 
@@ -209,13 +213,13 @@ body {
 .shadow:hover::before {
     content: '';
     position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust to center */
-    width: 100px;
-    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 60px;
     border-radius: 50%;
-    box-shadow: var(--oange) 0px 5px 150px 30px;
+    box-shadow: var(--oange) 0px 5px 150px 50px;
 }
 
 .card .add {
@@ -233,27 +237,28 @@ body {
     fill: var(--oange);
 }
 
-.main-container-stadium {
-    overflow: visible;
-}
-
 .main-container-menu {
     width: 40%;
     height: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .playersDisplay {
     width: 100%;
-    height: 100%;
-    display: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 2em;
+    max-height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     backdrop-filter: blur(10px);
-    padding: .5em;
+    padding: 2em;
     border-radius: 10px;
+    overflow-x: auto;
+    justify-items: center;
+    row-gap: 1em;
+}
+
+.playersDisplay::-webkit-scrollbar {
+    width: 0;
 }
 
 .menu {
@@ -262,4 +267,41 @@ body {
     backdrop-filter: blur(10px);
     padding: .5em;
     border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 2em;
+}
+
+.menu select {
+    padding: 1em 3em;
+    border-radius: 10px;
+}
+
+.menu .select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: .5em;
+}
+
+.menu .select h3 {
+    color: var(--white);
+}
+
+.occupied::after {
+    content: "";
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    position: absolute;
+    z-index: 1000;
+    width: 80%;
+    height: 90%;
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
 }
