@@ -116,10 +116,15 @@ async function fetch0() {
 }
 fetch0();
 
-let AttCards = [];
-let MidCards = [];
-let DefCards = [];
-let KepCards = [];
+let AvAttCards = [];
+let AvMidCards = [];
+let AvDefCards = [];
+let AvKepCards = [];
+
+let OccAttCards = [];
+let OccMidCards = [];
+let OccDefCards = [];
+let OccKepCards = [];
 
 function global() {
     let addedPlayers = playersContainer.querySelectorAll(".card")
@@ -127,24 +132,19 @@ function global() {
     function playerAppeand() {
         cards.forEach(e => {
             e.addEventListener("click", () => {
-                console.log("Click To Add");
                 playersContainer.innerHTML = ''
                 let role = e.parentElement.className;
                 if (role === 'att') {
-                    console.log("Att");
-                    AttCards.forEach(e => playersContainer.appendChild(e));
+                    AvAttCards.forEach(e => playersContainer.appendChild(e));
                 }
                 else if (role === 'mid') {
-                    console.log("mid");
-                    MidCards.forEach(e => playersContainer.appendChild(e));
+                    AvMidCards.forEach(e => playersContainer.appendChild(e));
                 }
                 else if (role === "def") {
-                    console.log("def");
-                    DefCards.forEach(e => playersContainer.appendChild(e));
+                    AvDefCards.forEach(e => playersContainer.appendChild(e));
                 }
                 else {
-                    console.log("Kep");
-                    KepCards.forEach(e => playersContainer.appendChild(e));
+                    AvKepCards.forEach(e => playersContainer.appendChild(e));
                 }
             })
         })
@@ -153,73 +153,98 @@ function global() {
     function Filter() {
         addedPlayers.forEach(e => {
             let position = e.className;
-
-            if (!position.includes("occupied")) {
-                if (position.includes("RW") || position.includes("LW") || position.includes("ST")) {
-                    AttCards.push(e)
-                }
-                if (position.includes("CM") || position.includes("LM") || position.includes("RM")) {
-                    MidCards.push(e)
-                }
-                if (position.includes("CB") || position.includes("LB") || position.includes("RB")) {
-                    DefCards.push(e)
-                }
-                if (position.includes("GK")) {
-                    KepCards.push(e)
-                }
-            } else {
-                console.log(`${position} didn't pass!!`);
-
+            if (position.includes("RW") || position.includes("LW") || position.includes("ST")) {
+                AvAttCards.push(e)
             }
+            if (position.includes("CM") || position.includes("LM") || position.includes("RM")) {
+                AvMidCards.push(e)
+            }
+            if (position.includes("CB") || position.includes("LB") || position.includes("RB")) {
+                AvDefCards.push(e)
+            }
+            if (position.includes("GK")) {
+                AvKepCards.push(e)
+            }
+            playerAppeand()
         })
     }
     Filter()
-    playerAppeand()
 
     let formulaireCards = document.querySelectorAll(".stadiumCard");
-    let Classes = formulaireCards[0].className;
-    let classToAdd = Classes.split(' ');
     function mod() {
         formulaireCards.forEach(e => {
-            e.addEventListener("click", () => {
-                // console.log(e);
-                // console.log(this);
-
-                // formulaireCards.forEach(j => {
-                //     j.style.scale = 1;
-                // })
-                // e.style.scale = 1.2
-                // e.style.transition = 'all .3s ease'
-                // flag = true;
+            e.onclick = () => {
+                formulaireCards.forEach(j => {
+                    j.style.scale = 1;
+                })
+                e.style.scale = 1.2
+                e.style.transition = 'all .3s ease'
                 let playersContainer = document.querySelector(".playersDisplay").querySelectorAll(".card");
                 playersContainer.forEach(i => {
-                    console.log(1);
-
-                    i.addEventListener("click", () => {
-                        console.log(e);
-
-                        
+                    i.onclick = () => {
                         e.innerHTML = i.innerHTML;
-                        // e.className = '';
-                        // classToAdd.forEach(Class => e.classList.add(Class))
-                        // i.classList.add("occupied")
-                        //mod()
-                        // Filter()
-
-                    }, { once: true })
-
+                        e.classList.add('occupied')
+                        switchHandler(e)
+                    }
                 })
-            }, { once: true })
-            // console.log(e)
-            // playersContainer.querySelectorAll(".card").forEach(e => {
-            //     if (e.className.includes("occupied")) {
-            //         e.outerHTML = ''
-            //     }
-            // })
+            }
         })
     }
     mod()
-    function handleSwitch(output, input) {
-        output.innerHTML = input.innerHTML
+
+    function switchHandler(e) {
+        let position = e.parentElement.className;
+        if (position === "att") {
+            cardSwitch(AvAttCards, OccAttCards, e);
+            update(AvAttCards, OccAttCards, e)
+        }
+        if (position === "mid") {
+            cardSwitch(AvMidCards, OccMidCards, e);
+            update(AvMidCards, OccMidCards, e)
+        }
+        if (position === "def") {
+            cardSwitch(AvDefCards, OccDefCards, e);
+            update(AvDefCards, OccDefCards, e)
+        }
+        if (position === "kep") {
+            cardSwitch(AvKepCards, OccKepCards, e);
+            update(AvKepCards, OccKepCards, e)
+        }
+    }
+
+    function cardSwitch(Avarr, Occarr, e) {
+        let index = Avarr.findIndex(card => card.innerHTML === e.innerHTML);
+        Occarr.push(Avarr[index])
+        Avarr.splice(index, 1)
+    }
+
+    function update(Avarr, Occarr, e) {
+        let tempArr = []
+        e.parentElement.querySelectorAll(".occupied").forEach(e => {
+            tempArr.push(e)
+        })
+
+        let tempNames = tempArr.map(card => card = card.querySelector(".name").innerHTML);
+        let itemsToMove = [];
+
+        for (let i = 0; i < Occarr.length; i++) {
+            let nameToCom = Occarr[i].querySelector(".name").innerHTML
+            if (!tempNames.includes(nameToCom)) {
+                itemsToMove.push(Occarr[i]);
+                Occarr.splice(i, 1);
+            }
+        }
+
+        itemsToMove.forEach(item => {
+            console.log(item.querySelector(".name").innerHTML + " Has added");
+
+            Avarr.push(item);
+        });
+
+        let playersContainer = document.querySelector(".playersDisplay");
+        playersContainer.innerHTML = ''
+        Avarr.forEach(e => {
+            playersContainer.appendChild(e)
+        })
     }
 }
