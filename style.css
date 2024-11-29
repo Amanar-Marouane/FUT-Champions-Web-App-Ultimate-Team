@@ -63,12 +63,15 @@ body {
     width: 100%;
     height: 120vh;
     padding: 1em;
+    position: relative;
 }
 
 .main-container {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 1em;
 }
 
 .main-container-stadium {
@@ -202,7 +205,7 @@ body {
     text-align: center;
     color: var(--white);
     font-weight: 600;
-    transform: translateY(20px);
+    transform: translateY(30px);
 }
 
 .shadow:hover {
@@ -247,14 +250,16 @@ body {
 .playersDisplay {
     width: 100%;
     max-height: 100%;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(3, 1fr);
     backdrop-filter: blur(10px);
     padding: 2em;
+    padding-top: 5em;
     border-radius: 10px;
     overflow-x: auto;
     justify-items: center;
     row-gap: 1em;
+    position: relative;
 }
 
 .playersDisplay::-webkit-scrollbar {
@@ -267,7 +272,7 @@ body {
     backdrop-filter: blur(10px);
     padding: .5em;
     border-radius: 10px;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -289,4 +294,96 @@ body {
 
 .menu .select h3 {
     color: var(--white);
+}
+
+.quit {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.addNewPlayer {
+    display: none;
+}
+
+.addNewPlayer form {
+    width: 100%;
+    max-height: 100%;
+    backdrop-filter: blur(10px);
+    padding: 2em;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    color: black;
+    text-align: center;
+}
+
+.addNewPlayer .title h1 {
+    color: white;
+}
+
+.addNewPlayer input {
+    width: 20em;
+    padding: .5em 1em;
+    border-radius: 10px;
+}
+
+.Pstatics {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Pstatics input {
+    width: 50%;
+    padding: .5em 1em;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.addNewPlayer label {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 1em 2em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px black;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.main-container-stadium-players {
+    display: flex;
+}
+
+.preview {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.previewCard {
+    scale: 4;
+}
+
+#delete {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: fit-content;
+}
+
+.info h3 {
+    margin: 0 !important;
+    font-size: 1em !important;
 }

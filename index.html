@@ -8,6 +8,20 @@
     <link rel="icon" href="./media/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script defer src="./script.js"></script>
+
+    <link rel="stylesheet" href="//cdn.tutorialjinni.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.tutorialjinni.com/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet"
+        href="//g.tutorialjinni.com/mojoaxel/bootstrap-select-country/dist/css/bootstrap-select-country.min.css" />
+
+
+    <script defer src="//cdn.tutorialjinni.com/jquery/3.6.1/jquery.min.js"></script>
+    <script defer src="//cdn.tutorialjinni.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="//cdn.tutorialjinni.com/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <script defer
+        src="//g.tutorialjinni.com/mojoaxel/bootstrap-select-country/dist/js/bootstrap-select-country.min.js"></script>
+
+        
 </head>
 
 <body>
@@ -22,6 +36,16 @@
         </nav>
     </header>
     <main class="main">
+        <div class="quit">
+            <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M15.9908 7.82251C16.2897 7.5357 16.7644 7.54547 17.0512 7.84433L20.541 11.4807C20.8195 11.7709 20.8195 12.2291 20.541 12.5193L17.0512 16.1557C16.7644 16.4545 16.2897 16.4643 15.9908 16.1775C15.692 15.8907 15.6822 15.4159 15.969 15.1171L18.2404 12.7502L11.2727 12.7502C10.8585 12.7502 10.5227 12.4144 10.5227 12.0002C10.5227 11.586 10.8585 11.2502 11.2727 11.2502L18.2408 11.2502L15.969 8.88295C15.6822 8.58409 15.692 8.10932 15.9908 7.82251Z"
+                    fill="#000000" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M3.25 4C3.25 3.58579 3.58579 3.25 4 3.25H13.4545C13.8688 3.25 14.2045 3.58579 14.2045 4V7C14.2045 7.41421 13.8688 7.75 13.4545 7.75C13.0403 7.75 12.7045 7.41421 12.7045 7V4.75H4.75V19.25H12.7045V17C12.7045 16.5858 13.0403 16.25 13.4545 16.25C13.8688 16.25 14.2045 16.5858 14.2045 17V20C14.2045 20.4142 13.8688 20.75 13.4545 20.75H4C3.58579 20.75 3.25 20.4142 3.25 20V4Z"
+                    fill="#000000" />
+            </svg>
+        </div>
         <div class="main-container">
             <div class="main-container-stadium">
                 <img src="./media/stadium_background.webp" alt="Stadium Background">
@@ -354,9 +378,42 @@
                         </div>
                     </div>
                 </div>
+                <div class="preview">
+                    <div class="card previewCard">
+                        <img class="backgroung" src="./media/emptyBadge.png" alt="">
+                        <div class="info">
+                            <h3 class="rating"></h3>
+                            <h3 class="position"></h3>
+                        </div>
+                        <div class="photo">
+                            <img src="./media/person.png" alt="">
+                        </div>
+                        <div class="name"></div>
+                        <div class="statistics">
+                            <div class=""><span></span><br><span></span></div>
+                            <div class=""><span></span><br><span></span></div>
+                            <div class=""><span></span><br><span></span></div>
+                            <div class=""><span></span><br><span></span></div>
+                            <div class=""><span></span><br><span></span></div>
+                            <div class=""><span></span><br><span></span></div>
+                        </div>
+                        <div class="info1">
+                            <div class="flag flag-image">
+                                <img src="./media/flag.png" alt="">
+                            </div>
+                            <div class="club">
+                                <img src="./media/league.png" alt="">
+                            </div>
+                        </div>
+                        <div class="CPostion">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="main-container-menu">
-                <div class="playersDisplay"></div>
+                <div class="playersDisplay">
+                </div>
                 <div class="menu">
                     <div class="select">
                         <h3>Your Team's Formule</h3>
@@ -367,6 +424,55 @@
                     </div>
                     <button class="button allPlayers" onclick="clickEffect()">Show All The Players</button>
                     <button class="button addPlayer" onclick="clickEffect()">Add New Player</button>
+                </div>
+                <div class="addNewPlayer">
+                    <form id="formToSend">
+                        <div class="title">
+                            <h1>Add a new player</h1>
+                        </div>
+                        <div class="PName">
+                            <input type="text" name="name" placeholder="Player Name" id="PName">
+                        </div>
+                        <div class="Prating">
+                            <input type="number" max="120" name="rating" placeholder="Player Rating" id="Prating">
+                        </div>
+                        <div class="Pflag">
+                            <select class="selectpicker countrypicker" name="flag" data-flag="true" id="Pflag"></select>
+                        </div>
+                        <div class="Pposition">
+                            <select name="position" class="selectpicker" id="Pposition">
+                                <option value="" disabled>-- Select a position --</option>
+                                <option value="RW">Right Wing</option>
+                                <option value="LW">Left Wing</option>
+                                <option value="ST">Striker</option>
+                                <option value="LM">Left Midfield</option>
+                                <option value="RM">Right Midfield</option>
+                                <option value="CM">Central Midfield</option>
+                                <option value="LB">Left Back</option>
+                                <option value="CB">Center Back</option>
+                                <option value="RB">Right Back</option>
+                                <option value="GK">Goalkeeper</option>
+                            </select>
+                        </div>
+                        <div class="Pphoto">
+                            <input type="url" name="photo" id="Pphoto" placeholder="Player' photo URL">
+                        </div>
+                        <div class="PcardImg">
+                            <input type="url" name="card" id="PcardImg" placeholder="Player' Card Img URL">
+                        </div>
+                        <div class="PclubImg">
+                            <input type="url" name="logo" id="PclubImg" placeholder="Player' Club Img URL">
+                        </div>
+                        <div class="Pstatics">
+                            <input type="number" max="100" name="pac" placeholder="pac">
+                            <input type="number" max="100" name="pas" placeholder="pas">
+                            <input type="number" max="100" name="dri" placeholder="dri">
+                            <input type="number" max="100" name="phy" placeholder="phy">
+                            <input type="number" max="100" name="sho" placeholder="sho">
+                            <input type="number" max="100" name="Def" placeholder="Def">
+                        </div>
+                        <button class="button fetchCard">Finish</button>
+                    </form>
                 </div>
             </div>
         </div>
