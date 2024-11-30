@@ -383,6 +383,14 @@ body {
     height: fit-content;
 }
 
+#modify {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 40px;
+    height: fit-content;
+}
+
 .info h3 {
     margin: 0 !important;
     font-size: 1em !important;

@@ -1,5 +1,9 @@
 let button = document.querySelectorAll(".button")
 let info = document.querySelector(".info")
+let flagToModify = false;
+let id;
+let flagToPush;
+let altToPush;
 
 function clickEffect() {
     button.forEach(e => {
@@ -16,18 +20,123 @@ function clickEffect() {
 let currFormation = document.querySelector("#TeamStrategie")
 let F_T_T = document.querySelector(".F-T-T")
 let cardToMove = document.querySelectorAll(".card")
-let att = document.querySelector(".att").querySelectorAll(".card")
-let mid = document.querySelector(".mid").querySelectorAll(".card")
-let def = document.querySelector(".def").querySelectorAll(".card")
+let ST_Position = `<div class="CPostion">
+                        <p>ST</p>
+                    </div>
+                    <div class="add">
+                        <svg width="40px" height="40px" viewBox="0 0 32 32" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+
+                            <title>plus-square</title>
+                            <desc>Created with Sketch Beta.</desc>
+                            <defs>
+
+                            </defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                                sketch:type="MSPage">
+                                <g id="Icon-Set" sketch:type="MSLayerGroup"
+                                    transform="translate(-100.000000, -1035.000000)" fill="#000000">
+                                    <path
+                                        d="M130,1063 C130,1064.1 129.104,1065 128,1065 L104,1065 C102.896,1065 102,1064.1 102,1063 L102,1039 C102,1037.9 102.896,1037 104,1037 L128,1037 C129.104,1037 130,1037.9 130,1039 L130,1063 L130,1063 Z M128,1035 L104,1035 C101.791,1035 100,1036.79 100,1039 L100,1063 C100,1065.21 101.791,1067 104,1067 L128,1067 C130.209,1067 132,1065.21 132,1063 L132,1039 C132,1036.79 130.209,1035 128,1035 L128,1035 Z M122,1050 L117,1050 L117,1045 C117,1044.45 116.552,1044 116,1044 C115.448,1044 115,1044.45 115,1045 L115,1050 L110,1050 C109.448,1050 109,1050.45 109,1051 C109,1051.55 109.448,1052 110,1052 L115,1052 L115,1057 C115,1057.55 115.448,1058 116,1058 C116.552,1058 117,1057.55 117,1057 L117,1052 L122,1052 C122.552,1052 123,1051.55 123,1051 C123,1050.45 122.552,1050 122,1050 L122,1050 Z"
+                                        id="plus-square" sketch:type="MSShapeGroup">
+
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <img class="backgroung" src="./media/emptyBadge.png" alt="">`
+F_T_T.style.display = "none"
+
 function Move() {
     currFormation.addEventListener("change", () => {
         if (currFormation.value === '4-3-3') {
-            mid[1].style.transform = "translateY(20px)"
-            def[2].style.transform = "translateY(20px)"
-            def[1].style.transform = "translateY(20px)"
-            F_T_T.style.display = 'flex'
+            F_T_T.style.display = "flex"
+            F_T_T.querySelector(".att").innerHTML = ''
+            let ST = document.createElement("div")
+            ST.className = "card stadiumCard shadow ST"
+            ST.innerHTML = ST_Position;
+            let RW = document.createElement("div")
+            RW.className = "card stadiumCard shadow ST"
+            RW.innerHTML = ST_Position;
+            let LW = document.createElement("div")
+            LW.className = "card stadiumCard shadow ST"
+            LW.innerHTML = ST_Position;
+            LW.querySelector(".CPostion p").innerHTML = "LW"
+            RW.querySelector(".CPostion p").innerHTML = "LW"
+            F_T_T.querySelector(".att").appendChild(LW)
+            F_T_T.querySelector(".att").appendChild(ST)
+            F_T_T.querySelector(".att").appendChild(RW)
+
+            F_T_T.querySelector(".mid").innerHTML = ''
+            let LM = document.createElement("div")
+            LM.className = "card stadiumCard shadow LM"
+            LM.innerHTML = ST_Position;
+            let CM = document.createElement("div")
+            CM.className = "card stadiumCard shadow CM"
+            CM.innerHTML = ST_Position;
+            let RM = document.createElement("div")
+            RM.className = "card stadiumCard shadow RM"
+            RM.innerHTML = ST_Position;
+            LM.querySelector(".CPostion p").innerHTML = "LM"
+            CM.querySelector(".CPostion p").innerHTML = "CM"
+            RM.querySelector(".CPostion p").innerHTML = "RM"
+            F_T_T.querySelector(".mid").appendChild(LM)
+            F_T_T.querySelector(".mid").appendChild(CM)
+            F_T_T.querySelector(".mid").appendChild(RM)
+
+            let att = document.querySelector(".att").querySelectorAll(".card")
+            let mid = document.querySelector(".mid").querySelectorAll(".card")
+            let def = document.querySelector(".def").querySelectorAll(".card")
+            att[1].style.transform = "translateY(30px)"
+            mid[1].style.transform = "translateY(30px)"
+            def[2].style.transform = "translateY(30px)"
+            def[1].style.transform = "translateY(30px)"
+            mid[2].style.transform = "translateY(30px)"
+            mid[1].style.transform = "translateY(30px)"
+        } else if (currFormation.value === '4-4-2') {
+            F_T_T.style.display = "flex"
+            F_T_T.querySelector(".att").innerHTML = ''
+            let ST = document.createElement("div")
+            ST.className = "card stadiumCard shadow ST"
+            ST.innerHTML = ST_Position;
+            let ST2 = document.createElement("div")
+            ST2.className = "card stadiumCard shadow ST"
+            ST2.innerHTML = ST_Position;
+            F_T_T.querySelector(".att").appendChild(ST2)
+            F_T_T.querySelector(".att").appendChild(ST)
+
+            F_T_T.querySelector(".mid").innerHTML = ''
+            let LM = document.createElement("div")
+            LM.className = "card stadiumCard shadow LM"
+            LM.innerHTML = ST_Position;
+            let CM = document.createElement("div")
+            CM.className = "card stadiumCard shadow CM"
+            CM.innerHTML = ST_Position;
+            let CM2 = document.createElement("div")
+            CM2.className = "card stadiumCard shadow CM"
+            CM2.innerHTML = ST_Position;
+            let RM = document.createElement("div")
+            RM.className = "card stadiumCard shadow RM"
+            RM.innerHTML = ST_Position;
+            LM.querySelector(".CPostion p").innerHTML = "LM"
+            CM.querySelector(".CPostion p").innerHTML = "CM"
+            CM2.querySelector(".CPostion p").innerHTML = "CM"
+            RM.querySelector(".CPostion p").innerHTML = "RM"
+            F_T_T.querySelector(".mid").appendChild(LM)
+            F_T_T.querySelector(".mid").appendChild(CM2)
+            F_T_T.querySelector(".mid").appendChild(CM)
+            F_T_T.querySelector(".mid").appendChild(RM)
+
+            let mid = document.querySelector(".mid").querySelectorAll(".card")
+            let def = document.querySelector(".def").querySelectorAll(".card")
+            mid[1].style.transform = "translateY(30px)"
+            mid[2].style.transform = "translateY(30px)"
+            def[1].style.transform = "translateY(30px)"
+            def[2].style.transform = "translateY(30px)"
         } else {
-            F_T_T.style.display = 'none'
+            F_T_T.style.display = "none"
         }
     })
 }
@@ -75,6 +184,7 @@ async function fetch0() {
         let cardTemplate = `<div class="card ${position}">
                             <img class="backgroung" src="${card}" alt="">
                             <img class="backgroung" id="delete" src="./media/delete.svg" alt="">
+                            <img class="backgroung" id="modify" src="./media/pen.svg" alt="">
                             <div class="info">
                                 <h3 class="rating">${rating}</h3>
                                 <h3 class="position">${position}</h3>
@@ -134,7 +244,6 @@ async function fetch0() {
         GetBackToMenu.style.display = 'block'
         addNewPlayer.style.display = "none"
         Preview.style.display = 'none'
-        F_T_T.style.display = 'flex'
         flag = true;
         global()
     })
@@ -145,7 +254,6 @@ async function fetch0() {
         GetBackToMenu.style.display = 'none'
         addNewPlayer.style.display = "none"
         Preview.style.display = 'none'
-        F_T_T.style.display = 'flex'
         flag = false;
     })
 
@@ -154,7 +262,6 @@ async function fetch0() {
         menu.style.display = 'none'
         GetBackToMenu.style.display = 'block'
         Preview.style.display = 'flex'
-        F_T_T.style.display = 'none'
         flag = false;
     })
 }
@@ -295,8 +402,14 @@ function global() {
     }
     function enhace() {
         let toHide = F_T_T.querySelectorAll("#delete")
+        let toHide2 = F_T_T.querySelectorAll("#modify")
         if (toHide) {
             toHide.forEach(e => {
+                e.style.display = "none"
+            })
+        }
+        if (toHide) {
+            toHide2.forEach(e => {
                 e.style.display = "none"
             })
         }
@@ -316,6 +429,28 @@ function global() {
     }
     removeClickHandling()
 
+    function modifyClickHandling() {
+        let btn = document.querySelectorAll("#modify")
+        btn.forEach((e, i) => {
+            e.addEventListener("click", () => {
+                let parentDiv = e.parentElement.parentElement.className;
+                if (parentDiv === "playersDisplay") {
+                    id = playersData[i].id
+                }
+                let cardToModify = e.parentElement;
+                modifyFiller(cardToModify)
+                playersContainer.style.display = 'none'
+                addNewPlayer.style.display = "flex"
+                menu.style.display = 'none'
+                GetBackToMenu.style.display = 'block'
+                Preview.style.display = 'flex'
+                F_T_T.style.display = 'none'
+                flagToModify = true;
+            })
+        })
+    }
+    modifyClickHandling()
+
     async function Delete(id) {
         const response = await fetch(`http://localhost:3000/players/${id}`, {
             method: 'DELETE',
@@ -329,6 +464,25 @@ function global() {
         } else {
             console.error(`Failed to delete item with ID ${id}.`);
         }
+    }
+}
+
+async function modify(id, CardToFetch) {
+    const response = await fetch(`http://localhost:3000/players/${id}`, {
+        method: 'PATCH',
+        headers: {
+            "Content-Type": 'application/json'
+        },
+        body: JSON.stringify(CardToFetch)
+    });
+
+    if (!response.ok) {
+        console.log(`HTTP error! Status: ${response.status}`);
+    }
+    if (response.ok) {
+        console.log(`Item with ID ${id} has been modified.`);
+    } else {
+        console.error(`Failed to delete item with ID ${id}.`);
     }
 }
 
@@ -354,119 +508,150 @@ let inputsToValid = document.querySelector(".addNewPlayer").querySelectorAll("in
 
 let CardToFetch = {}
 
-document.addEventListener("DOMContentLoaded", function () {
-    function CardPreview() {
-        PlayerName.addEventListener("input", () => {
-            nameToPreview.innerHTML = PlayerName.value
-        })
 
-        PlayerRating.addEventListener("input", () => {
-            if (PlayerRating.value > 100) {
-                PlayerRating.value = 100;
-            }
-            if (PlayerRating.value < 0) {
-                PlayerRating.value = 0;
-            }
-            ratingToPreview.innerHTML = PlayerRating.value
-        })
+function CardPreview() {
+    nameToPreview.innerHTML = PlayerName.value
+    PlayerName.addEventListener("input", () => {
+        nameToPreview.innerHTML = PlayerName.value
+    })
 
-        PlayerPhoto.addEventListener("input", () => {
-            photoToPreview.src = PlayerPhoto.value
-        })
+    ratingToPreview.innerHTML = PlayerRating.value
+    PlayerRating.addEventListener("input", () => {
+        if (PlayerRating.value > 100) {
+            PlayerRating.value = 100;
+        }
+        if (PlayerRating.value < 0) {
+            PlayerRating.value = 0;
+        }
+        ratingToPreview.innerHTML = PlayerRating.value
+    })
 
-        PlayerClubImg.addEventListener("input", () => {
-            clubToPreview.src = PlayerClubImg.value
-        })
+    if (PlayerPhoto.value) {
+        photoToPreview.src = PlayerPhoto.value
+    }
+    PlayerPhoto.addEventListener("input", () => {
+        photoToPreview.src = PlayerPhoto.value
+    })
 
-        PlayerCardImg.addEventListener("input", () => {
-            CardImgToPreview.src = PlayerCardImg.value
-        })
+    if (PlayerClubImg.value) {
+        clubToPreview.src = PlayerClubImg.value
+    }
+    PlayerClubImg.addEventListener("input", () => {
+        clubToPreview.src = PlayerClubImg.value
+    })
 
-        let st = PlayerStatics.querySelectorAll("input")
+    if (PlayerCardImg.value) {
+        CardImgToPreview.src = PlayerCardImg.value
+    }
+    PlayerCardImg.addEventListener("input", () => {
+        CardImgToPreview.src = PlayerCardImg.value
+    })
+
+    let st = PlayerStatics.querySelectorAll("input")
+    PositionToPreview.innerHTML = PlayerPosition.value
+    CPositionToPreview.innerHTML = PlayerPosition.value
+    PlayerPosition.addEventListener("change", () => {
         PositionToPreview.innerHTML = PlayerPosition.value
         CPositionToPreview.innerHTML = PlayerPosition.value
-        PlayerPosition.addEventListener("change", () => {
-            PositionToPreview.innerHTML = PlayerPosition.value
-            CPositionToPreview.innerHTML = PlayerPosition.value
-            if (PlayerPosition.value === "GK") {
-                st[0].placeholder = "div"
-                st[1].placeholder = "han"
-                st[3].placeholder = "kic"
-                st[3].placeholder = "ref"
-                st[4].placeholder = "spe"
-                st[5].placeholder = "pos"
-                st[0].name = "div"
-                st[1].name = "han"
-                st[3].name = "kic"
-                st[3].name = "ref"
-                st[4].name = "spe"
-                st[5].name = "pos"
-            } else {
-                st[0].placeholder = "pac"
-                st[1].placeholder = "pas"
-                st[3].placeholder = "dri"
-                st[3].placeholder = "phy"
-                st[4].placeholder = "sho"
-                st[5].placeholder = "def"
-                st[0].name = "pac"
-                st[1].name = "pas"
-                st[3].name = "dri"
-                st[3].name = "phy"
-                st[4].name = "sho"
-                st[5].name = "def"
+        if (PlayerPosition.value === "GK") {
+            st[0].placeholder = "div"
+            st[1].placeholder = "han"
+            st[3].placeholder = "kic"
+            st[3].placeholder = "ref"
+            st[4].placeholder = "spe"
+            st[5].placeholder = "pos"
+            st[0].name = "div"
+            st[1].name = "han"
+            st[3].name = "kic"
+            st[3].name = "ref"
+            st[4].name = "spe"
+            st[5].name = "pos"
+        } else {
+            st[0].placeholder = "pac"
+            st[1].placeholder = "pas"
+            st[3].placeholder = "dri"
+            st[3].placeholder = "phy"
+            st[4].placeholder = "sho"
+            st[5].placeholder = "def"
+            st[0].name = "pac"
+            st[1].name = "pas"
+            st[3].name = "dri"
+            st[3].name = "phy"
+            st[4].name = "sho"
+            st[5].name = "def"
+        }
+    })
+
+    st.forEach((e, i) => {
+        autoFiller(i, e)
+        e.addEventListener('input', () => {
+            if (e.value > 100) {
+                e.value = 100;
             }
+            if (e.value < 0) {
+                e.value = 0;
+            }
+            autoFiller(i, e)
         })
+    })
 
-        st.forEach((e, i) => {
-            e.addEventListener('input', () => {
-                if (e.value > 100) {
-                    e.value = 100;
-                }
-                if (e.value < 0) {
-                    e.value = 0;
-                }
-                autoFiller(i, e)
-            })
-        })
-
-        let PlayerFlag = document.querySelector(".countrypicker")
+    document.addEventListener("DOMContentLoaded", function () {
+        let PlayerFlag = document.querySelector(".countrypicker");
         let selectedOption = PlayerFlag.options[0];
         let countryCode = selectedOption.value.toLowerCase();
+
         flagToPreview.src = `https://flagcdn.com/w320/${countryCode}.png`;
-        flagToPreview.alt = `Flag of ${selectedOption.text}`;
+        flagToPreview.alt = selectedOption.text.toUpperCase();
+
+        flagToPush = `https://flagcdn.com/w320/${countryCode}.png`;
+        altToPush = selectedOption.text;
+
         PlayerFlag.addEventListener("change", () => {
             selectedOption = PlayerFlag.options[PlayerFlag.selectedIndex];
             countryCode = selectedOption.value.toLowerCase();
-            flagToPreview.src = `https://flagcdn.com/w320/${countryCode}.png`;
-            flagToPreview.alt = `Flag of ${selectedOption.text}`;
-        })
-    }
-    CardPreview()
 
-    formToSend.addEventListener("submit", (e) => {
-        e.preventDefault()
-        let counter = 0
-        inputsToValid.forEach((e, i) => {
-            if (NotNull(e) === true) {
-                counter++
-            }
-            if (i === inputsToValid.length - 1) {
-                if (counter === 0) {
-                    console.log("ready to fetch");
-                    let MyForm = new FormData(formToSend)
-                    for (item of MyForm) {
-                        let name = item[0];
-                        let value = item[1];
-                        CardToFetch[name] = value;
-                    }
-                    console.log(CardToFetch);
-                    fetchNewCard(CardToFetch)
-                    CardToFetch = {}
+            flagToPreview.src = `https://flagcdn.com/w320/${countryCode}.png`;
+            flagToPreview.alt = selectedOption.text;
+
+            flagToPush = `https://flagcdn.com/w320/${countryCode}.png`;
+            altToPush = selectedOption.text;
+        });
+    });
+}
+CardPreview()
+
+formToSend.addEventListener("submit", (e) => {
+    e.preventDefault()
+    let counter = 0
+    inputsToValid.forEach((e, i) => {
+        if (NotNull(e) === true) {
+            counter++
+        }
+        if (i === inputsToValid.length - 1) {
+            if (counter === 0) {
+                let MyForm = new FormData(formToSend)
+                for (item of MyForm) {
+                    let name = item[0];
+                    let value = item[1];
+                    CardToFetch[name] = value;
                 }
+                CardToFetch.flag = flagToPush;
+                CardToFetch.nationality = altToPush;
+                console.log("src is " + flagToPush);
+
+                console.log(CardToFetch.flag);
+                if (!flagToModify) {
+                    fetchNewCard(CardToFetch)
+                } else {
+                    modify(id, CardToFetch)
+                }
+                CardToFetch = {}
+                formToSend.reset()
             }
-        })
+        }
     })
-});
+})
+
 
 function autoFiller(i, e) {
     for (let index = 0; index < 6; index++) {
@@ -498,4 +683,35 @@ async function fetchNewCard(form) {
         console.log(`HTTP error! Status: ${response.status}`);
     }
     formToSend.reset();
+}
+
+async function modifyFiller(cardToModify) {
+    PlayerName.value = cardToModify.querySelector(".name").innerHTML
+    PlayerRating.value = cardToModify.querySelector(".rating").innerHTML
+    PlayerPhoto.value = cardToModify.querySelector(".photo").querySelector("img").src
+    PlayerClubImg.value = cardToModify.querySelector(".club").querySelector("img").src
+    PlayerCardImg.value = cardToModify.querySelector("img").src
+    PlayerPosition.value = cardToModify.querySelector(".position").innerHTML
+    let st = cardToModify.querySelector(".statistics").querySelectorAll("div")
+    let t = PlayerStatics.querySelectorAll("input")
+    for (let index = 0; index < 6; index++) {
+        t[index].value = st[index].querySelectorAll("span")[1].innerHTML
+    }
+
+    let PlayerFlag = document.querySelector(".countrypicker select")
+    let country = cardToModify.querySelector(".flag img").alt.toLowerCase();
+
+
+    Array.from(PlayerFlag.options).forEach((e, i) => {
+        let countryName = e.innerHTML.toLowerCase()
+        let countryCode = e.value.toLowerCase()
+
+        if (countryName === country) {
+            flagToPreview.src = `https://flagcdn.com/w320/${countryCode}.png`;
+            cardToModify.querySelector(".flag img").alt = e.innerHTML;
+            flagToPreview.alt = e.innerHTML;
+            PlayerFlag.value = e.value;
+        }
+    })
+    CardPreview()
 }
