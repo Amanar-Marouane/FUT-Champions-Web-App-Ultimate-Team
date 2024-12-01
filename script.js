@@ -220,7 +220,7 @@ async function fetch0() {
             let sho = e.sho;
             let pas = e.pas;
             let dri = e.dri;
-            let Def = e.def;
+            let Def = e.Def;
             let phy = e.phy
             statistics = `<div class="statistics">
                                 <div class="pac"><span>pac</span><br><span>${pac}</span></div>
@@ -241,6 +241,7 @@ async function fetch0() {
     })
 
     modTime.addEventListener("click", () => {
+        console.log("click")
         playersContainer.style.display = 'grid'
         menu.style.display = 'none'
         GetBackToMenu.style.display = 'block'
@@ -251,6 +252,7 @@ async function fetch0() {
     })
 
     GetBackToMenu.addEventListener("click", () => {
+        console.log("click")
         playersContainer.style.display = 'none'
         menu.style.display = 'flex'
         GetBackToMenu.style.display = 'none'
@@ -262,6 +264,7 @@ async function fetch0() {
     })
 
     addPlayer.addEventListener("click", () => {
+        console.log("click")
         addNewPlayer.style.display = "flex"
         menu.style.display = 'none'
         GetBackToMenu.style.display = 'block'
@@ -289,6 +292,7 @@ function global() {
     function playerAppeand() {
         cards.forEach(e => {
             e.addEventListener("click", () => {
+                console.log("click")
                 playersContainer.innerHTML = ''
                 let role = e.parentElement.className;
                 if (role === 'att') {
@@ -355,19 +359,15 @@ function global() {
         let position = e.parentElement.className;
         if (position === "att") {
             cardSwitch(AvAttCards, OccAttCards, e);
-            update(AvAttCards, OccAttCards, e)
         }
         if (position === "mid") {
             cardSwitch(AvMidCards, OccMidCards, e);
-            update(AvMidCards, OccMidCards, e)
         }
         if (position === "def") {
             cardSwitch(AvDefCards, OccDefCards, e);
-            update(AvDefCards, OccDefCards, e)
         }
         if (position === "kep") {
             cardSwitch(AvKepCards, OccKepCards, e);
-            update(AvKepCards, OccKepCards, e)
         }
     }
 
@@ -375,17 +375,14 @@ function global() {
         let index = Avarr.findIndex(card => card.innerHTML === e.innerHTML);
         Occarr.push(Avarr[index])
         Avarr.splice(index, 1)
+        update(Avarr, Occarr, e)
     }
 
     function update(Avarr, Occarr, e) {
-        let tempArr = []
-        e.parentElement.querySelectorAll(".occupied").forEach(e => {
-            tempArr.push(e)
-        })
+        let tempArr = Array.from(e.parentElement.querySelectorAll(".occupied"));
 
         let tempNames = tempArr.map(card => card = card.querySelector(".name").innerHTML);
         let itemsToMove = [];
-
         for (let i = 0; i < Occarr.length; i++) {
             let nameToCom = Occarr[i].querySelector(".name").innerHTML
             if (!tempNames.includes(nameToCom)) {
@@ -403,7 +400,6 @@ function global() {
         Avarr.forEach(e => {
             playersContainer.appendChild(e)
         })
-
         enhace()
     }
     function enhace() {
@@ -425,6 +421,7 @@ function global() {
         let btn = document.querySelectorAll("#delete")
         btn.forEach((e, i) => {
             e.addEventListener("click", () => {
+                console.log("click")
                 let parentDiv = e.parentElement.parentElement.className;
                 if (parentDiv === "playersDisplay") {
                     let id = playersData[i].id
@@ -439,6 +436,7 @@ function global() {
         let btn = document.querySelectorAll("#modify")
         btn.forEach((e, i) => {
             e.addEventListener("click", () => {
+                console.log("click")
                 let parentDiv = e.parentElement.parentElement.className;
                 if (parentDiv === "playersDisplay") {
                     id = playersData[i].id

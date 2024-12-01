@@ -64,11 +64,10 @@
       "sho": "39",
       "pas": "39",
       "dri": "39",
-      "Def": 39,
+      "Def": "39",
       "phy": "39",
       "id": "f1aa",
-      "card": "http://127.0.0.1:5500/media/badge0.png",
-      "Def": "39"
+      "card": "http://127.0.0.1:5500/media/badge0.png"
     },
     {
       "name": "Virgil van Dijk",
@@ -205,23 +204,6 @@
       "Def": 39,
       "phy": 61,
       "id": "94a0"
-    },
-    {
-      "name": "Brahim Diáz",
-      "photo": "https://cdn.sofifa.net/players/231/410/25_120.png",
-      "position": "LW",
-      "nationality": "Morocco",
-      "flag": "https://cdn.sofifa.net/flags/ma.png",
-      "club": "Real Madrid",
-      "logo": "https://cdn.sofifa.net/meta/team/3468/120.png",
-      "rating": 82,
-      "pac": 85,
-      "sho": 74,
-      "pas": 78,
-      "dri": 85,
-      "Def": 31,
-      "phy": 56,
-      "id": "740f"
     },
     {
       "name": "Karim Benzema",
@@ -377,40 +359,6 @@
       "id": "a1bd"
     },
     {
-      "name": "Youssef En-Nesyri",
-      "photo": "https://cdn.sofifa.net/players/235/410/25_120.png",
-      "position": "ST",
-      "nationality": "Morocco",
-      "flag": "https://cdn.sofifa.net/flags/ma.png",
-      "club": "Fenerbahçe",
-      "logo": "https://cdn.sofifa.net/meta/team/88/120.png",
-      "rating": 83,
-      "pac": 82,
-      "sho": 82,
-      "pas": 63,
-      "dri": 77,
-      "Def": 36,
-      "phy": 80,
-      "id": "5404"
-    },
-    {
-      "name": "Noussair Mazraoui",
-      "photo": "https://cdn.sofifa.net/players/236/401/25_120.png",
-      "position": "LB",
-      "nationality": "Morocco",
-      "flag": "https://cdn.sofifa.net/flags/ma.png",
-      "club": "Manchester United",
-      "logo": "https://cdn.sofifa.net/meta/team/14/120.png",
-      "rating": 81,
-      "pac": 78,
-      "sho": 66,
-      "pas": 77,
-      "dri": 83,
-      "Def": 77,
-      "phy": 71,
-      "id": "ab46"
-    },
-    {
       "name": "Ismael Saibari",
       "photo": "https://cdn.sofifa.net/players/259/480/25_120.png",
       "position": "CM",
@@ -443,23 +391,6 @@
       "spe": 50,
       "pos": 85,
       "id": "334e"
-    },
-    {
-      "id": "a6b6",
-      "name": "Chase Oconnor",
-      "rating": "65",
-      "flag": "https://flagcdn.com/w320/tm.png",
-      "nationality": "Turkmenistan",
-      "position": "LB",
-      "photo": "https://cdn.sofifa.net/players/190/871/25_120.png",
-      "card": "http://127.0.0.1:5500/media/badge0.png",
-      "logo": "https://cdn.sofifa.net/meta/team/7011/120.png",
-      "pac": "54",
-      "pas": "81",
-      "dri": "5",
-      "phy": "13",
-      "sho": "19",
-      "Def": "60"
     }
   ]
 }
