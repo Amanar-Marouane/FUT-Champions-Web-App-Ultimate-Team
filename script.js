@@ -93,8 +93,6 @@ function Move() {
             mid[1].style.transform = "translateY(30px)"
             def[2].style.transform = "translateY(30px)"
             def[1].style.transform = "translateY(30px)"
-            mid[2].style.transform = "translateY(30px)"
-            mid[1].style.transform = "translateY(30px)"
         } else if (currFormation.value === '4-4-2') {
             F_T_T.style.display = "flex"
             F_T_T.querySelector(".att").innerHTML = ''
@@ -238,6 +236,10 @@ async function fetch0() {
         addedPlayers[addedPlayers.length - 1].innerHTML += statistics;
     })
 
+    currFormation.addEventListener("change", () => {
+        global()
+    })
+
     modTime.addEventListener("click", () => {
         playersContainer.style.display = 'grid'
         menu.style.display = 'none'
@@ -254,6 +256,8 @@ async function fetch0() {
         GetBackToMenu.style.display = 'none'
         addNewPlayer.style.display = "none"
         Preview.style.display = 'none'
+        F_T_T.style.display = 'none'
+        currFormation.value = "-- Choose a formation --";
         flag = false;
     })
 
@@ -262,6 +266,8 @@ async function fetch0() {
         menu.style.display = 'none'
         GetBackToMenu.style.display = 'block'
         Preview.style.display = 'flex'
+        F_T_T.style.display = 'none'
+        currFormation.value = "-- Choose a formation --";
         flag = false;
     })
 }

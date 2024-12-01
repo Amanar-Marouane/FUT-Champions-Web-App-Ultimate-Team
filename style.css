@@ -249,7 +249,7 @@ body {
 
 .playersDisplay {
     width: 100%;
-    max-height: 100%;
+    height: 100%;
     display: none;
     grid-template-columns: repeat(3, 1fr);
     backdrop-filter: blur(10px);
@@ -307,6 +307,7 @@ body {
 
 .addNewPlayer {
     display: none;
+    height: 100%;
 }
 
 .addNewPlayer form {
@@ -394,4 +395,168 @@ body {
 .info h3 {
     margin: 0 !important;
     font-size: 1em !important;
+}
+
+.footer {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    margin-top: 20px;
+    row-gap: 1em;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    width: 80%;
+    backdrop-filter: blur(10px);
+    font-size: 1.1em;
+    padding-top: 1em;
+}
+
+.footer ul {
+    list-style: none;
+    line-height: 40px;
+}
+
+.footer li {
+    cursor: pointer;
+}
+
+.footer li:hover {
+    text-shadow: 2px 2px 4px;
+}
+
+#formToSend .title h1{
+    margin: 0 !important;
+}
+
+.selectpicker {
+    transform: translateX(-50px);
+}
+
+.dropdown-menu {
+    width: 80px;
+}
+
+@media (max-width: 1135px) {
+    .playersDisplay {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+    }
+
+    .card {
+        scale: 0.9;
+    }
+
+    .previewCard {
+        scale: 3;
+    }
+    
+    .addNewPlayer form,
+    .Pstatics {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .F-T-T .card {
+        scale: 0.8;
+    }
+
+    .previewCard {
+        scale: 2.5;
+    }
+
+    .footer {
+        text-align: center;
+        font-size: 0.9em;
+    }
+
+    #formToSend div input,
+    #formToSend div h1,
+    #formToSend div select {
+        width: 100% !important;
+    }
+
+    #formToSend div {
+        width: fit-content !important;
+        height: fit-content !important;
+    }
+
+    #formToSend .title h1{
+        width: 100%;
+        font-size: 0.9em !important;
+    }
+
+    #formToSend .Pstatics {
+        width: 100%;
+    }
+
+    #formToSend .Pstatics input {
+        width: 50% !important;
+    }
+
+    #formToSend {
+        padding: 0 !important;
+    }
+}
+
+@media (max-width: 770px) {
+    .playersDisplay {
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+
+    .F-T-T .card {
+        scale: 0.7;
+    }
+
+    .menu *{
+        scale: 0.9;
+    }
+}
+
+@media (max-width: 750px) {
+    .menu * {
+        scale: 0.8;
+    }
+
+    .container {
+        width: 90%;
+        justify-content: space-between;
+    }
+}
+
+@media (max-height: 500px) {
+    .main,
+    .main-container,
+    .main-container-stadium {
+        height: 150vh;
+        max-height: 250vh;
+    }
+
+    .F-T-T {
+        justify-content: center;
+        padding: 5em 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .previewCard {
+        scale: 1.5;
+    }
+
+    .main-container-menu {
+        width: 50%;
+    }
+
+    .main-container-stadium {
+        width: 50%;
+    }
 }
