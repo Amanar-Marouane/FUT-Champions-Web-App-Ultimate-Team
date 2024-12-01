@@ -578,13 +578,13 @@ function CardPreview() {
             st[3].placeholder = "dri"
             st[3].placeholder = "phy"
             st[4].placeholder = "sho"
-            st[5].placeholder = "def"
+            st[5].placeholder = "Def"
             st[0].name = "pac"
             st[1].name = "pas"
             st[3].name = "dri"
             st[3].name = "phy"
             st[4].name = "sho"
-            st[5].name = "def"
+            st[5].name = "Def"
         }
     })
 
